@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Seed Application</title>
+        <base href="/">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="bower_components/es6-promise/dist/es6-promise.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./stylesheets/app.css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    </head>
+    <body class="app" ng-controller="AppCtrl as app">
+        <header>
+            Header goes here.
+        </header>
+        <section>
+            <!-- <img width="600" height="300" src="./images/headerStub.png"> -->
+            <img class="headerImage" src="./images/headerStub.png">
+        </section>
+    <div>
+        <ul class="nav-align nav nav-tabs">
+            <li ng-class="{'active': app.isSet(1)}"><a type="btn btn-primary" class="btn" ng-click="app.setTab(1)">Registration</a></li>
+            <li ng-class="{'active': app.isSet(2)}"><a type="btn btn-primary" class="btn" ng-click="app.setTab(2)">Accomodations</a></li>
+            <li ng-class="{'active': app.isSet(3)}"><a type="btn btn-primary" class="btn" ng-click="app.setTab(3)">Speakers</a></li>
+            <li ng-class="{'active': app.isSet(4)}"><a type="btn btn-primary" class="btn" ng-click="app.setTab(4)">Fees</a></li>
+            <li ng-class="{'active': app.isSet(5)}"><a type="btn btn-primary" class="btn" ng-click="app.setTab(5)">Payments</a></li>
+            <li ng-class="{'active': app.isSet(6)}"><a type="btn btn-primary" class="btn" ng-click="app.setTab(6)">Guidelines</a></li>
+            <li ng-class="{'active': app.isSet(7)}"><a type="btn btn-primary" class="btn" ng-click="app.setTab(7)">Flyers</a></li>
+            <li class="dropdown" ng-class="{'active': app.isSet(8)}"> <a  type="btn btn-primary" class="dropdown-toggle" data-toggle="dropdown" ng-click="app.setTab(8)">Admin<b class="caret" style="margin-left: 20px;"></b></a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                    <li><a tabindex="-1" href="http://localhost:9000/speakers">Action</a>
+                    </li>
+                    <li><a tabindex="-1" href="http://localhost:9000/registration">Another action</a>
+                    </li>
+                    <li><a tabindex="-1" href="http://localhost:9000/accomodations">Something else here</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a tabindex="-1" href="http://localhost:9000/contact/info">Separated link</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div ui-view></div>
+        <footer>
+            Footer goes here.
+        </footer>
+    </body>
+
+    <script src="jspm_packages/system.js"></script>
+    <script src="config.js"></script>
+    <script>
+        System.import("app");
+    </script>
+</html>

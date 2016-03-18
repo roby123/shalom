@@ -1,0 +1,76 @@
+{
+  "name": "seed",
+  "version": "1.0.0",
+  "repository": "https://github.com/seed",
+  "private": true,
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "author": {
+    "name": "Roby Thomas"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "public"
+    },
+    "dependencies": {
+      "angular": "github:angular/bower-angular@^1.4.0",
+      "angular-animate": "github:angular/bower-angular-animate@^1.4.5",
+      "angular-mocks": "github:angular/bower-angular-mocks@^1.4.0",
+      "angular-ui-router": "github:angular-ui/ui-router@^0.2.15",
+      "angular-ui/bootstrap": "github:angular-ui/bootstrap@^0.13.0",
+      "babel": "npm:babel-core@^5.1.13",
+      "d3": "github:mbostock/d3@^3.5.6",
+      "lodash": "npm:lodash@^3.9.3",
+      "moment": "github:moment/moment@^2.10.3",
+      "restangular": "github:mgonto/restangular@^1.5.1"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.1.13",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  },
+  "keywords": [
+    "seed-app"
+  ],
+  "devDependencies": {
+    "connect-modrewrite": "^0.8.2",
+    "del": "^2.1.0",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^6.1.0",
+    "gulp-bower": "0.0.11",
+    "gulp-connect": "^2.2.0",
+    "gulp-jshint": "^1.12.0",
+    "gulp-ngdocs": "^0.2.13",
+    "gulp-sass": "^2.1.0",
+    "gulp-shell": "^0.5.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "http-rewrite-middleware": "^0.1.6",
+    "jasmine-core": "^2.3.4",
+    "jshint": "^2.8.0",
+    "jshint-stylish": "^2.1.0",
+    "json-proxy": "^0.9.1",
+    "jspm": "^0.16.15",
+    "karma": "^0.13.15",
+    "karma-babel-preprocessor": "^5.2.1",
+    "karma-chrome-launcher": "^0.2.1",
+    "karma-coverage": "^0.5.3",
+    "karma-jasmine": "^0.3.6",
+    "karma-jspm": "^2.0.2",
+    "karma-junit-reporter": "^0.3.2",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "karma-systemjs": "^0.9.0",
+    "karma-verbose-reporter": "^0.0.3",
+    "path": "^0.12.7",
+    "phantomjs": "^1.9.18",
+    "request": "^2.65.0",
+    "rimraf": "^2.4.3",
+    "run-sequence": "^1.1.4",
+    "systemjs-builder": "^0.14.11"
+  },
+  "dependencies": {},
+  "scripts": {
+    "postinstall": "gulp dist"
+  }
+}
