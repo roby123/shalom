@@ -26,12 +26,12 @@ class controller {
         console.log("here3");
         switch(tabId) {
             case 1: this.$location.path('/registration');break;
-            case 2: this.$location.path('/accomodations');break;
-            case 3: this.$location.path('/speakers');break;
-            case 4: this.$location.path('/fees');break;
-            case 5: this.$location.path('/payments');break;
-            case 6: this.$location.path('/guidelines');break;
-            case 7: this.$location.path('/flyers');break;
+            case 2: this.$location.path('/accommodation');break;
+            case 3: this.$location.path('/specialneeds');break;
+            case 4: this.$location.path('/guidelines');break;
+            case 5: this.$location.path('/flyers');break;
+            case 6: this.$location.path('/payment');break;
+            case 7: this.$location.path('/confirmation');break;
 
         }
     }

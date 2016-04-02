@@ -9,42 +9,117 @@
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css"> -->
         <link rel="stylesheet" href="./stylesheets/app.css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+      <!--   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      //  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+      //  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+      // <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script> -->
+
+      <!-- Angular Material Library -->
+      <!-- <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script> -->
     </head>
     <body class="app" ng-controller="AppCtrl as app">
-        <header>
-            Header goes here.
-        </header>
-        <section>
+        <header class="row">
+            <div class="col-md-2"></div>
+            
+            <div class="col-md-8">
+                Header goes here.
             <!-- <img width="600" height="300" src="./images/headerStub.png"> -->
-            <img class="headerImage" src="./images/headerStub.png">
-        </section>
-    <div>
-        <ul class="nav-align nav nav-tabs">
-            <li ng-class="{'active': app.isSet(1)}"><a type="btn btn-primary" class="btn" ng-click="app.setTab(1)">Registration</a></li>
-            <li ng-class="{'active': app.isSet(2)}"><a type="btn btn-primary" class="btn" ng-click="app.setTab(2)">Accomodations</a></li>
-            <li ng-class="{'active': app.isSet(3)}"><a type="btn btn-primary" class="btn" ng-click="app.setTab(3)">Speakers</a></li>
-            <li ng-class="{'active': app.isSet(4)}"><a type="btn btn-primary" class="btn" ng-click="app.setTab(4)">Fees</a></li>
-            <li ng-class="{'active': app.isSet(5)}"><a type="btn btn-primary" class="btn" ng-click="app.setTab(5)">Payments</a></li>
-            <li ng-class="{'active': app.isSet(6)}"><a type="btn btn-primary" class="btn" ng-click="app.setTab(6)">Guidelines</a></li>
-            <li ng-class="{'active': app.isSet(7)}"><a type="btn btn-primary" class="btn" ng-click="app.setTab(7)">Flyers</a></li>
-            <li class="dropdown" ng-class="{'active': app.isSet(8)}"> <a  type="btn btn-primary" class="dropdown-toggle" data-toggle="dropdown" ng-click="app.setTab(8)">Admin<b class="caret" style="margin-left: 20px;"></b></a>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
-                    <li><a tabindex="-1" href="http://localhost:9000/speakers">Action</a>
-                    </li>
-                    <li><a tabindex="-1" href="http://localhost:9000/registration">Another action</a>
-                    </li>
-                    <li><a tabindex="-1" href="http://localhost:9000/accomodations">Something else here</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li><a tabindex="-1" href="http://localhost:9000/contact/info">Separated link</a>
-                    </li>
+                <img class="headerImage" src="./images/headerStub.png">
+            </div>
+            <div class="col-md-2"></div>
+        </header>
+        
+    <div class="row">
+
+        <div class="col-md-2"></div>
+         <div class="col-md-8">
+            
+            
+                <ul class="nav-align nav nav-tabs">
+                <!--     <md-content class="md-padding">
+                        <md-tabs class="md-accent" md-selected="data.selectedIndex">
+                          <md-tab id="tab1">
+                            <md-tab-label>Registration</md-tab-label>
+                            <md-tab-body>
+                              View for Item #1 <br>
+                              data.selectedIndex = 0;
+                            </md-tab-body>
+                          </md-tab>
+                          <md-tab id="tab2">
+                            <md-tab-label>Accomodation</md-tab-label>
+                            <md-tab-body>
+                              View for Item #2 <br>
+                              data.selectedIndex = 1;
+                            </md-tab-body>
+                          </md-tab>
+                          <md-tab id="tab3">
+                            <md-tab-label>Special Needs</md-tab-label>
+                            <md-tab-body>
+                              View for Item #3 <br>
+                              data.selectedIndex = 2;
+                            </md-tab-body>
+                          </md-tab>
+                          <md-tab id="tab4">
+                            <md-tab-label>Guidelines</md-tab-label>
+                            <md-tab-body>
+                              View for Item #4 <br>
+                              data.selectedIndex = 2;
+                            </md-tab-body>
+                          </md-tab>
+                          <md-tab id="tab5">
+                            <md-tab-label>Flyers</md-tab-label>
+                            <md-tab-body>
+                              View for Item #5 <br>
+                              data.selectedIndex = 2;
+                            </md-tab-body>
+                          </md-tab>
+                        </md-tabs>
+                        <md-tab id="tab6">
+                            <md-tab-label>Payment</md-tab-label>
+                            <md-tab-body>
+                              View for Item #5 <br>
+                              data.selectedIndex = 2;
+                            </md-tab-body>
+                          </md-tab>
+                          <md-tab id="tab7">
+                            <md-tab-label>Confirmation</md-tab-label>
+                            <md-tab-body>
+                              View for Item #5 <br>
+                              data.selectedIndex = 2;
+                            </md-tab-body>
+                          </md-tab>
+                  </md-content> -->
+                    <li ng-class="{'active': app.isSet(1)}"><a type="btn btn-primary" class="btn" ng-click="app.setTab(1)">Registration</a></li>
+                    <li ng-class="{'active': app.isSet(2)}"><a type="btn btn-primary" class="btn" ng-click="app.setTab(2)">Accommodation</a></li>
+                    <li ng-class="{'active': app.isSet(3)}"><a type="btn btn-primary" class="btn" ng-click="app.setTab(3)">Special Needs</a></li>
+                    <li ng-class="{'active': app.isSet(4)}"><a type="btn btn-primary" class="btn" ng-click="app.setTab(4)">Guidelines</a></li>
+                    <li ng-class="{'active': app.isSet(5)}"><a type="btn btn-primary" class="btn" ng-click="app.setTab(5)">Flyers</a></li>
+                    <li ng-class="{'active': app.isSet(6)}"><a type="btn btn-primary" class="btn" ng-click="app.setTab(6)">Payment</a></li>
+                    <li ng-class="{'active': app.isSet(7)}"><a type="btn btn-primary" class="btn" ng-click="app.setTab(7)">Confirmation</a></li>
+                    <!-- <li class="dropdown" ng-class="{'active': app.isSet(8)}"> <a  type="btn btn-primary" class="dropdown-toggle" data-toggle="dropdown" ng-click="app.setTab(8)">Admin<b class="caret" style="margin-left: 20px;"></b></a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                            <li><a tabindex="-1" href="http://localhost:9000/speakers">Action</a>
+                            </li>
+                            <li><a tabindex="-1" href="http://localhost:9000/registration">Another action</a>
+                            </li>
+                            <li><a tabindex="-1" href="http://localhost:9000/accomodations">Something else here</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a tabindex="-1" href="http://localhost:9000/contact/info">Separated link</a>
+                            </li>
+                        </ul>
+                    </li> -->
                 </ul>
-            </li>
-        </ul>
+                
+            <div ui-view></div>
+        </div>
+        <div class="col-md-2"></div>
+
     </div>
-    <div ui-view></div>
+    
         <footer>
             Footer goes here.
         </footer>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<P> Please click on the buy button link to purchase a book.</P>
+<div>This is a Kart view </div>
+
+<div id="bookListWrapper">
+    <form role="form">
+        <div class=""form-group">
+        <input type="text" class="form_control" placeholder="Search here...">
+    </form>
+</div>
+
+<div>
+    <ul class=""list_unstyled">
+    <li class="book" style="background: white url(images/{{book.imgUrl}}) no-repeat" ng-repeat="book in kart">
+        <div class="book-details clearfix">
+            <h3> {{ book.name }} </h3>
+            <p> {{ book.price | currency: '$'}} </p>
+            <ul class="list-unstyled list-inline">
+                <li> Rating: {{ book.rating }} </li>
+                <li> Binding: {{ book.binding }} </li>
+                <li> Publisher: {{ book.publisher }} </li>
+                <li> Released: {{ book.releaseDate }} </li>
+            </ul>
+            <p> {{ book.details }} </p>
+            <button class="btn btn-into pull-right" ng-click="buy(book)">Buy</button>
+        </div>
+    </li>
+    </ul>
+</div>
+
+</body>
+</html>

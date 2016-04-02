@@ -6,59 +6,66 @@ import 'angular-ui-router';
 
 /* import controllers for home modules*/
 import registration from './controllers/registration';
-import accomodations from './controllers/accomodations';
-import speakers from './controllers/speakers';
-import fees from './controllers/fees';
-import payments from './controllers/payments';
+import accommodation from './controllers/accommodation';
+import specialneeds from './controllers/specialneeds';
 import guidelines from './controllers/guidelines';
 import flyers from './controllers/flyers';
+import payment from './controllers/payment';
+import confirmation from './controllers/confirmation';
 
 let path='./modules/home/';
 console.log("module here also");
 let homeModule=angular.module('homeModule',['ui.router'])
     .controller('registration',registration)
-    .controller('accomodations',accomodations)
-    .controller('speakers',speakers)
-    .controller('fees',fees)
-    .controller('payments',payments)
+    .controller('accommodation',accommodation)
+    .controller('specialneeds',specialneeds)
     .controller('guidelines',guidelines)
     .controller('flyers',flyers)
+    .controller('payment',payment)
+    .controller('confirmation',confirmation)
 
     .config(['$stateProvider',function($stateProvider){
         $stateProvider.state('registration',{
                 url:'/registration',
                 controller: 'registration',
+                controllerAs: 'reg',
                 templateUrl: './modules/home/views/registration.html'
             })
-            .state('accomodations',{
-                url: '/accomodations',
-                controller: 'accomodations',
-                templateUrl: './modules/home/views/accomodations.html'
+            .state('accommodation',{
+                url: '/accommodation',
+                controller: 'accommodation',
+                controllerAs: 'acc',
+                templateUrl: './modules/home/views/accommodation.html'
             })
-            .state('speakers',{
-                url: '/speakers',
-                controller: 'speakers',
-                templateUrl: './modules/home/views/speakers.html'
-            })
-            .state('fees',{
-                url: '/fees',
-                controller: 'fees',
-                templateUrl: './modules/home/views/fees.html'
-            })
-            .state('payments',{
-                url: '/payments',
-                controller: 'payments',
-                templateUrl: './modules/home/views/payments.html'
+            .state('specialneeds',{
+                url: '/specialneeds',
+                controller: 'specialneeds',
+                controllerAs: 'spec',
+                templateUrl: './modules/home/views/specialneeds.html'
             })
             .state('guidelines',{
                 url: '/guidelines',
                 controller: 'guidelines',
+                controllerAs: 'guide',
                 templateUrl: './modules/home/views/guidelines.html'
             })
             .state('flyers',{
                 url: '/flyers',
                 controller: 'flyers',
+                controllerAs: 'fly',
                 templateUrl: './modules/home/views/flyers.html'
+            })
+            .state('payment',{
+                url: '/payment',
+                controller: 'payment',
+                controllerAs: 'pay',
+                templateUrl: './modules/home/views/payment.html'
+            })
+            .state('confirmation',{
+                url: '/confirmation',
+                controller: 'confirmation',
+                controllerAs: 'conf',
+                templateUrl: './modules/home/views/confirmation.html'
             })
 
 

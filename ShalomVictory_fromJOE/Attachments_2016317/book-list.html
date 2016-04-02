@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="bookListWrapper">
+        <!--
+        <form role="form">
+            <div class=""form-group">
+                <input type="text" class="form_control" placeholder="Search here..."
+                    data-ng-model="searchString">
+
+            </div>
+        </form>
+        -->
+    <div>
+
+    <ul class=""list_unstyled">
+    <li class="book" style="background: white url(images/{{book.imgUrl}}) no-repeat" ng-repeat="book in books | filter:searchString">
+        <div class="book-details clearfix">
+
+            <h1><center> {{ book.name }} </center></h1>
+            <div><<h3><center>Registration</center></h3></div>
+
+            <!--
+            {{ book.price | currency: '$'}}
+            -->
+            <ul class="list-unstyled list-inline">
+               <!--
+                <li> Rating: {{ book.rating }} </li>
+                -->
+                <h3><center><li> {{ book.binding }} </li></center></h3>
+
+                <h3><center><li> {{ book.publisher}} </li></center></h3>
+                <h3><center><li> {{ book.releaseDate }} </li></center></h3>
+            </ul>
+            <!--
+            <p> {{ book.details }} </p>
+            -->
+            <button class="btn btn-into pull-right" ng-click="addToKart(book)">Register Now</button>
+
+    </li>
+    </ul>
+</div>
+
+
+</body>
+</html>

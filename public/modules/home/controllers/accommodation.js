@@ -4,14 +4,12 @@
 import angular from 'angular';
 
 class controller{
-
     constructor(){
         this.init();
     }
 
     init(){
-        this.text = 'Tab 2';
-        console.log("controller 2 initialized");
+        this.text = "accommodation";
     }
 }
 

@@ -133,7 +133,7 @@ gulp.task('reload', function(){
 });
 
 gulp.task('watch:scripts', function(){
-    gulp.watch(paths.app.scripts, ['jshint', 'reload', 'docs']);
+    gulp.watch(paths.app.scripts, ['reload', 'docs']);
 });
 
 gulp.task('watch:styles', function(){

@@ -1,5 +1,48 @@
+<div class="row row-reg">
+  
+<div class="main-chart">
+  <p class="title u-p">Enter Attendee Details</p>
 
-Here is Registration content....
+  
+    <section class="row u-p">
+      <div class="col-md-3">
+      <span class="spacer">
+      <span class="reg_heading">Adult(s):</span>
+      <select ng-init="reg.adultCount = reg.participantCount[0]" ng-options='adult.value for adult in reg.participantCount' ng-model='reg.adultCount' ng-change='reg.addRegistrationAdults(reg.adultCount)'></select>
+    <br>
+      <span class="sub_heading">[18-65 years]</span>
+    </span>
+  </div>
+
+      <div class="col-md-3">
+      <span class="spacer">
+      <span class="reg_heading">Youth:</span>
+      <select ng-init="reg.youthCount = reg.participantCount[0]" ng-options='youth.value for youth in reg.participantCount' ng-model='reg.youthCount' ng-change='reg.addRegistrationYouth(reg.youthCount)'></select>
+      <br>
+      <span class="sub_heading">[13-17 years]</span>
+      </span>
+    </div>
+
+<div class="col-md-3">
+      <span class="spacer">
+      <span class="reg_heading">Pre-Teens:</span>
+      <select ng-init="reg.teenCount = reg.participantCount[0]" ng-options='teen.value for teen in reg.participantCount' ng-model='reg.teenCount' ng-change='reg.addRegistrationTeens(reg.teenCount)'></select>
+       <br>
+      <span class="sub_heading">[9-12 years]</span>
+      </span>
+    </div>
+
+<div class="col-md-3">
+      <span class="spacer">
+      <span class="reg_heading">Kids:</span>
+      <select ng-init="reg.kidsCount = reg.participantCount[0]" ng-options='kids.value for kids in reg.participantCount' ng-model='reg.kidsCount' ng-change='reg.addRegistrationKids(reg.kidsCount)'></select>
+       <br>
+      <span class="sub_heading">[4-8 years]</span>
+      </span>
+      </div>
+    </section>  
+  </div>
+</div>
 
   <table class="table">
   <thead>
@@ -12,29 +55,17 @@ Here is Registration content....
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mr.</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Mr.</td>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Mr.</td>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
+    <tr ng-repeat="persons in reg.person">
+      <th>{{persons.id}}</th>
+      <td><select ng-options='title for title in reg.{{persons.title}}' ng-model='persons.titleSelected'></select></td>
+      <td><input type="text" value="{{persons.firstName}}" ></td>
+      <td><input type="text" value="{{persons.lastName}}" ></td>
+      <td>{{persons.fee}}</td>
     </tr>
   </tbody>
 </table>
+
+</div>
 <!-- <div ui-view="chart1"></div>
 <div ui-view="chart2"></div>
 <div ui-view="chart3"></div> -->
