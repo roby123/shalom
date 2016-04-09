@@ -1,35 +1,38 @@
 
 import angular from 'angular';
 
-class controller{
-   constructor(shalomservice,$http){
-        this.shalomservice = shalomservice;
-        this.$http=$http;
-       this.init();
+export function controller($scope,shalomservice,$http){
+   // constructor(shalomservice,$http){
+   //      this.shalomservice = shalomservice;
+   //      this.$http=$http;
+   //     this.init();
 
-   }
+   // }
 
-    init(){
-        this.text = "Tab 1";
-        this.testing;
-        // console.log(shalomservice.testVar,'testing service');
-        console.log("Registration controller initialized");
-        this.participantCount; 
-        this.text = "Title";
-        console.log("Selecting Titles from the list");
-        // this.participantTitle=['Mr.','Mrs','Miss','Rev.Fr','Rev.Sr','Master','Baby'];
-       	this.person = [];
-       	this.overallIndex=0;
-        this.loadParticipantCount();
-    }
-        loadParticipantCount(){
+    // init(){
+    //     this.text = "Tab 1";
+    //     this.testing;
+    //     // console.log(shalomservice.testVar,'testing service');
+    //     console.log("Registration controller initialized");
+    //     this.participantCount; 
+    //     this.text = "Title";
+    //     console.log("Selecting Titles from the list");
+    //     // this.participantTitle=['Mr.','Mrs','Miss','Rev.Fr','Rev.Sr','Master','Baby'];
+    //    	this.person = [];
+    //    	this.overallIndex=0;
+    //     this.loadParticipantCount();
+    // }
+
+    this.person = [];
+         this.overallIndex=0;
+        this.loadParticipantCount = () => {
             this.shalomservice.getParticipantCount().then((response) => {
                 console.log(response, 'what is response');
                 this.participantCount = response.data;
             });
         };
 
-    	addRegistrationAdults(participantCount){
+    	addRegistrationAdults = (participantCount) => {
             // this.testing = this.shalomservice.testVar;
             // console.log(this.testing,'what is testing variable');
     		this.participantAdultTitle=['Mr.','Mrs.','Miss.','Rev.Fr','Rev.Sr'];
@@ -42,7 +45,7 @@ class controller{
     		console.log('Total participant count :',this.overallIndex);
     	};
 
-        addRegistrationYouth(participantCount){
+        addRegistrationYouth = (participantCount) => {
     		this.participantYouthTitle=['Mr.','Miss.'];
     		console.log('Adding Youth');
     		console.log('Number of Participants added (Youth)',participantCount.value);
@@ -54,7 +57,7 @@ class controller{
     	};
 	// console.log(this.adultData);
 
-        addRegistrationTeens(participantCount)
+        addRegistrationTeens = (participantCount) =>
         {
             // this.participantTitle=['Mast.','Miss.'];
             this.participantTeenTitle=['Mr.','Miss.'];
@@ -68,7 +71,7 @@ class controller{
             console.log('Total participant count :',this.overallIndex);
         };
         
-        addRegistrationKids(participantCount){
+        addRegistrationKids = (participantCount) => {
             this.participantKidTitle=['Mast.','Baby'];
             console.log('Adding Kids');
             console.log('Number of participants added(Kids)',participantCount.value);
@@ -81,6 +84,4 @@ class controller{
         };
 }
 
-controller.$inject = ['shalomservice','$http'];
-
-export default controller;
+controller.$inject = ['$scope','shalomservice','$http'];

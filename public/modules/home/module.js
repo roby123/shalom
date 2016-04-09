@@ -5,24 +5,27 @@ import angular from 'angular';
 import 'angular-ui-router';
 
 /* import controllers for home modules*/
-import registration from './controllers/registration';
+import registration from './directives/registration';
 import accommodation from './controllers/accommodation';
 import specialneeds from './controllers/specialneeds';
 import guidelines from './controllers/guidelines';
 import flyers from './controllers/flyers';
 import payment from './controllers/payment';
 import confirmation from './controllers/confirmation';
+import shalomservice from './services/shalomservice';
 
 let path='./modules/home/';
 console.log("module here also");
 let homeModule=angular.module('homeModule',['ui.router'])
-    .controller('registration',registration)
+    // .controller('registration',registration)
     .controller('accommodation',accommodation)
     .controller('specialneeds',specialneeds)
     .controller('guidelines',guidelines)
     .controller('flyers',flyers)
     .controller('payment',payment)
     .controller('confirmation',confirmation)
+    .service('shalomservice',shalomservice)
+    .directive('registration',registration)
 
     .config(['$stateProvider',function($stateProvider){
         $stateProvider.state('registration',{
