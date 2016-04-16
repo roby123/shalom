@@ -9,6 +9,7 @@ import 'angular-animate';
 
 //application modules
 import homeModule from './modules/home/module';
+// import registrationModule from './modules/home/directives/module';
 
 //main application controller;
 import AppCtrl from './app-controller';

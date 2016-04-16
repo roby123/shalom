@@ -2,8 +2,8 @@ import angular from 'angular';
 
 import * as registration from './registration';
 
-let module = angular.module('registration', []) 
-.directive('registration',function() {
+let module = angular.module('registrationModule',['$scope','$http']) 
+.directive('registration',function () {
   return {
     scope: true,
     transclude: true,
